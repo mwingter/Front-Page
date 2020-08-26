@@ -1,0 +1,21 @@
+body{
+    background-color: black;
+}
+.navbar{
+    padding: 0;
+    position: relative;
+}
+
+.title{
+    position: absolute;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+    display: block;
+    bottom: 60%;
+}
+.text-title{
+    font-size: 50px;
+}
+.text-quote{
+    color: rgb(131, 131, 131);
+}
