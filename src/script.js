@@ -6,7 +6,7 @@
 var dataList = [];
 
 //pegando os dados da API
-fetch('http://www.mocky.io/v2/5d6fb6b1310000f89166087b')
+fetch('https://www.mocky.io/v2/5d6fb6b1310000f89166087b')
 .then(function(response){
     return response.json();
 })
@@ -16,14 +16,6 @@ fetch('http://www.mocky.io/v2/5d6fb6b1310000f89166087b')
         dataList.push(vaga);
     })
 
-
-
-
-
-// usando o timeout para carregar o array por completo, senão o javascript 
-// executa a próxima função considerando que ele está vazio
-//setTimeout(function(){
-    
         var filtered = dataList.filter(isValid); // Utilizando método filter do javascript para filtrar os dados da API
         //console.log("Dados filtrados: ", filtered)
         var div_vagas = document.getElementById("vagas-api")
@@ -44,7 +36,6 @@ fetch('http://www.mocky.io/v2/5d6fb6b1310000f89166087b')
             div_vagas.appendChild(text)
             div_local.appendChild(local)
         })
-//},1500)
 
 })
 
