@@ -16,27 +16,26 @@ fetch('https://www.mocky.io/v2/5d6fb6b1310000f89166087b')
         dataList.push(vaga);
     })
 
-        var filtered = dataList.filter(isValid); // Utilizando método filter do javascript para filtrar os dados da API
-        //console.log("Dados filtrados: ", filtered)
-        var div_vagas = document.getElementById("vagas-api")
-        var div_local = document.getElementById("local-api")
+    var filtered = dataList.filter(isValid); // Utilizando método filter do javascript para filtrar os dados da API
+    //console.log("Dados filtrados: ", filtered)
+    var div_vagas = document.getElementById("vagas-api")
+    var div_local = document.getElementById("local-api")
+    
+    filtered.forEach(function(vaga){
+        var text = document.createElement("h4");
+        var local = document.createElement("h4");
+
+        text.innerHTML = vaga.cargo;
+        if(vaga.localizacao){
+            local.innerHTML = vaga.localizacao.bairro + "-" + vaga.localizacao.cidade + "," + vaga.localizacao.pais
+        }
+        else{
+            local.innerHTML = "Remoto"
+        }
         
-        filtered.forEach(function(vaga){
-            var text = document.createElement("h4");
-            var local = document.createElement("h4");
-
-            text.innerHTML = vaga.cargo;
-            if(vaga.localizacao){
-                local.innerHTML = vaga.localizacao.bairro + "-" + vaga.localizacao.cidade + "," + vaga.localizacao.pais
-            }
-            else{
-                local.innerHTML = "Remoto"
-            }
-            
-            div_vagas.appendChild(text)
-            div_local.appendChild(local)
-        })
-
+        div_vagas.appendChild(text)
+        div_local.appendChild(local)
+    })
 })
 
 function isValid(value) {
