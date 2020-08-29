@@ -1,3 +1,6 @@
+body{
+    margin: 0;
+  }
 .navbar{
     padding: 0;
     position: relative;
@@ -8,14 +11,17 @@
     color: white;
     text-shadow: 1px 1px 1px black;
     display: block;
-    bottom: 60%;
+    bottom: 80%;
 }
 .text-title{
-    font-size: 50px;
+    font-size: 5vw;
+    top: 50%;
 }
 .text-quote{
     color: rgb(131, 131, 131);
 }
 .text-lighter{
     color: rgb(179, 179, 179);
+}
+.vagas{
 }
