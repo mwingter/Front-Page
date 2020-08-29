@@ -11,25 +11,20 @@ fetch('http://www.mocky.io/v2/5d6fb6b1310000f89166087b')
     return response.json();
 })
 .then(function(response){
-    //response.data retorna um array
+    //response.vagas retorna um array
     response.vagas.forEach(function(vaga){
         dataList.push(vaga);
     })
-})
 
 
-/*setTimeout(function(){
-        //console.log("dados recarregados", dataList);
-},1500)*/
 
-// Utilizando método filter do javascript para filtrar os dados da API
-function isValid(value) {
-    return value.ativa;
-}
+
+
 // usando o timeout para carregar o array por completo, senão o javascript 
 // executa a próxima função considerando que ele está vazio
-setTimeout(function(){
-        var filtered = dataList.filter(isValid);
+//setTimeout(function(){
+    
+        var filtered = dataList.filter(isValid); // Utilizando método filter do javascript para filtrar os dados da API
         //console.log("Dados filtrados: ", filtered)
         var div_vagas = document.getElementById("vagas-api")
         var div_local = document.getElementById("local-api")
@@ -49,8 +44,10 @@ setTimeout(function(){
             div_vagas.appendChild(text)
             div_local.appendChild(local)
         })
-},1500)
+//},1500)
 
+})
 
-
-
+function isValid(value) {
+    return value.ativa;
+}
