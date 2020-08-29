@@ -22,8 +22,8 @@ fetch('https://www.mocky.io/v2/5d6fb6b1310000f89166087b')
     var div_local = document.getElementById("local-api")
     
     filtered.forEach(function(vaga){
-        var text = document.createElement("h4");
-        var local = document.createElement("h4");
+        var text = document.createElement("p");
+        var local = document.createElement("p");
 
         text.innerHTML = vaga.cargo;
         if(vaga.localizacao){
