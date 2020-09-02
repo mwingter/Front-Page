@@ -17,7 +17,7 @@ fetch('https://www.mocky.io/v2/5d6fb6b1310000f89166087b')
     })
 
     var filtered = dataList.filter(isValid); // Utilizando método filter do javascript para filtrar os dados da API
-    console.log("Dados filtrados: ", filtered);
+    //console.log("Dados filtrados: ", filtered);
     var div_vagas = document.getElementById("vagas-api");
     var div_local = document.getElementById("local-api");
     
