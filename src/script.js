@@ -3,8 +3,6 @@
 - No caso em que não tem a localização, exibir "Remoto" no lugar.
 */
 
-var dataList = [];
-
 //pegando os dados da API
 fetch('https://www.mocky.io/v2/5d6fb6b1310000f89166087b')
 .then(function(response){
@@ -12,11 +10,7 @@ fetch('https://www.mocky.io/v2/5d6fb6b1310000f89166087b')
 })
 .then(function(response){
     //response.vagas retorna um array
-    response.vagas.forEach(function(vaga){
-        dataList.push(vaga);
-    })
-
-    var filtered = dataList.filter(isValid); // Utilizando método filter do javascript para filtrar os dados da API
+    var filtered = response.vagas.filter(isValid); // Utilizando método filter do javascript para filtrar os dados da API
     //console.log("Dados filtrados: ", filtered);
     var div_vagas = document.getElementById("vagas-api");
     var div_local = document.getElementById("local-api");
@@ -27,12 +21,11 @@ fetch('https://www.mocky.io/v2/5d6fb6b1310000f89166087b')
         var text = document.createElement("a");
         var local = document.createElement("p");
 
-        list.style.listStyle = "none"
-        list.style.padding = 0
+        list.className = "list-vagas"
 
         text.innerHTML = vaga.cargo;
         text.href = vaga.link;
-        text.style.color = "inherit";
+        text.className = "link-vagas"
 
         if(vaga.localizacao){
             local.innerHTML = vaga.localizacao.bairro + " - " + vaga.localizacao.cidade + ", " + vaga.localizacao.pais;
@@ -46,6 +39,9 @@ fetch('https://www.mocky.io/v2/5d6fb6b1310000f89166087b')
         div_vagas.appendChild(list);
         div_local.appendChild(local);
     })
+})
+.catch(() => {
+    document.getElementsByClassName("vagas")[0].innerHTML = "Não foi possível carregar as vagas."
 })
 
 function isValid(value) {

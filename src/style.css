@@ -15,7 +15,7 @@ body{
     color: white;
     text-shadow: 1px 1px 1px black;
     display: block;
-    bottom: 80%;
+    bottom: 40%;
 }
 .text-title{
     font-size: 5vw;
@@ -26,4 +26,21 @@ body{
 }
 .text-lighter{
     color: rgb(179, 179, 179);
+}
+.line{
+    border-top: rgb(179, 179, 179) 2px solid;
+    padding-top: 0.5em;
+    margin-top: 0.5em;
+    display: inline-block;
+    width: 250px;
+}
+.line::after{
+    content: " »";
+}
+.list-vagas{
+    list-style: none;
+    padding: 0;
+}
+.link-vagas{
+    color: inherit;
 }
